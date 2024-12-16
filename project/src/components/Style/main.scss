@@ -1,0 +1,58 @@
+@import '~bootstrap/scss/bootstrap';
+.h1 {
+  font-size: calc(2 * (1.375rem + 1.5vw));
+}
+.container{
+  @extend .container ;
+  margin: 10px;
+}
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Для выравнивания по вертикали */
+  width: 100%; /* Контейнер занимает всю ширину */
+}
+.lg-part-navigation{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.dropdown-center{
+  @extend .dropdown-center;
+  left: 50%; /* Сдвиг влево на 50% ширины родителя */
+  transform: translateX(-50%); /* Центрирование */
+}
+
+.nav-menu-part-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.nav-menu-part-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 600ms linear, transform 600ms linear;
+}
+
+.nav-menu-part-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+.nav-menu-part-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 600ms linear, transform 600ms linear;
+}
+.nav-menu-part-appear {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.nav-menu-part-appear-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 600ms, transform 600ms;
+}
+.flex-grow-1{
+  @extend .flex-grow-1;
+  text-align: center;
+}
