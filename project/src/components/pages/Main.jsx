@@ -3,7 +3,7 @@ export  default function Main(props) {
     return (
         <div>
             <NavigationBar></NavigationBar>
-            Main
+            <div style={{textAlign:"center"}} className="h1">Демонстрационный сайт</div>
         </div>
     )
 }

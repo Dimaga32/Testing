@@ -2,15 +2,12 @@ import { createServer } from "miragejs";
 
 createServer({
     routes() {
-        this.post("/api/execute", (schema, request) => {
+        this.post("/api/execute", ( request) => {
             const { language, code } = JSON.parse(request.requestBody);
-
-            // Простой обработчик: возвращает результат на основе языка
             if (code.includes("error")) {
-                return { output: "❌ Ошибка в коде!" };
+                return {status: "success", output: "❌ Ошибка в коде!" };
             }
-
-            return { output: `✅ Код на ${language} выполнен успешно!` };
+            return { status: "error",output: `✅ Код на ${language} выполнен успешно!` };
         });
     }
 });
