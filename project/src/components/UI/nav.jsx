@@ -1,19 +1,10 @@
 import React from "react";
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import '../Style/main.scss'
-import { CSSTransition } from 'react-transition-group';
-
 export default class NavigationBar extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            showDropdown: false
-        };
-
-        // Создаем реф для элемента, который будет анимироваться
-        this.dropdownRef = React.createRef();
     }
-
     render() {
         return (
             <Navbar expand="lg" className="bg-primary">

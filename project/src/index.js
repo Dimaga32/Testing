@@ -4,7 +4,7 @@ import App from './App';
 import { createServer } from "miragejs";
 import './components/Style/main.scss'
 const root = ReactDOM.createRoot(document.getElementById('root'));
-
+//создаём моковый сервер
 createServer({
     routes() {
         this.post("/api/execute", (schema, request) => {

@@ -4,13 +4,10 @@ import { javascript } from '@codemirror/lang-javascript';
 import { goLanguage} from "./help/Go_lang";
 import { pythonLanguage} from "./help/Python";
 import {Button, Stack} from "react-bootstrap";
-import {json} from "@codemirror/legacy-modes/mode/javascript";
 
 function CodeArea (props) {
     const [code, setCode] = useState('// Напишите ваш код здесь...');
     const [output, setOutput] = useState(''); // Для вывода результата
-
-    const onChange = (value) => {setCode(value);};
 
     // Функция для выбора языка подсветки
     const getLanguageExtension = () => {
@@ -25,7 +22,7 @@ function CodeArea (props) {
                 return javascript();
         }
     };
-
+    //запрос к мок серверу и получение ответа
     const executeCode = () => {
         fetch('/api/execute', {
             method: "POST",
@@ -46,7 +43,7 @@ function CodeArea (props) {
                 minHeight={`300px`}
                 height="max-content"
                 extensions={[getLanguageExtension()]}
-                onChange={onChange}
+                onChange={(value) => {setCode(value)}}
                 className="fs-3"
             />
             <Button  className="mx-auto w-auto fs-2" onClick={executeCode}>Выполнить</Button>
@@ -54,5 +51,4 @@ function CodeArea (props) {
         </Stack>
     );
 };
-
 export default CodeArea;

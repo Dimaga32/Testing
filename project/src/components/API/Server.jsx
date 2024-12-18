@@ -1,5 +1,5 @@
+//сервер в отдельном компоненте
 import { createServer } from "miragejs";
-
 createServer({
     routes() {
         this.post("/api/execute", ( request) => {
