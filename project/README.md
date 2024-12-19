@@ -1,3 +1,8 @@
+# Task
+Вы должны реализовать упрощённый интерфейс редактора кода (аналог leetcode.com),
+где пользователь может писать код на одном из двух заданных языков (например, Go и Python),
+отправлять его «на сервер» (имитация сервера) для выполнения и получать результаты.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

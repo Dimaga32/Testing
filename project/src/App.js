@@ -1,8 +1,8 @@
-import NavigationBar from "./components/UI/nav";
+import Router from "./components/Router/Router";
 function App() {
   return (
     <div className="App">
-      <NavigationBar/>
+        <Router/>
     </div>
   );
 }

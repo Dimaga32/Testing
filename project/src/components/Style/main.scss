@@ -18,41 +18,17 @@
   justify-content: space-around;
   align-items: center;
 }
-.dropdown-center{
-  @extend .dropdown-center;
-  left: 50%; /* Сдвиг влево на 50% ширины родителя */
-  transform: translateX(-50%); /* Центрирование */
-}
-
-.nav-menu-part-enter {
-  opacity: 0;
-  transform: translateY(-10px);
-}
-.nav-menu-part-enter-active {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 600ms linear, transform 600ms linear;
-}
-
-.nav-menu-part-exit {
-  opacity: 1;
-  transform: translateY(0);
-}
-.nav-menu-part-exit-active {
-  opacity: 0;
-  transform: translateY(-10px);
-  transition: opacity 600ms linear, transform 600ms linear;
-}
-.nav-menu-part-appear {
-  opacity: 0;
-  transform: translateY(-10px);
-}
-.nav-menu-part-appear-active {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 600ms, transform 600ms;
-}
 .flex-grow-1{
   @extend .flex-grow-1;
   text-align: center;
+}
+.flex-container:hover{
+  @extend .flex-container;
+}
+.Navbar-Brand{
+  box-sizing: border-box;
+  height: 50px;
+}
+.center.flex-grow-1.fs-2:hover{
+  background-color: rgb(9, 83, 189)
 }
