@@ -1,22 +1,50 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import { createServer } from "miragejs";
 import './components/Style/main.scss'
-const root = ReactDOM.createRoot(document.getElementById('root'));
-//создаём моковый сервер
-createServer({
-    routes() {
-        this.post("/api/execute", (schema, request) => {
-            const { language, code } = JSON.parse(request.requestBody);
-            if (code.includes("error")) {
-                return { output: "❌ Ошибка в коде!" };
-            }
-            return { output: `✅ Код на ${language} выполнен успешно!` };
-        });
-    }
-});
+import {createStore} from "redux";
+import {Provider} from "react-redux";
 
+const defaultState = {
+    user: {
+        isShowRegister: false,
+        isShowLogin: false,
+    },
+};
+
+const reducer = (state = defaultState, action) => {
+    switch (action.type) {
+        case 'ShowLogin':
+            return {
+                ...state,
+                user: { ...state.user, isShowLogin: true },
+            };
+        case 'HideLogin':
+            return {
+                ...state,
+                user: { ...state.user, isShowLogin: false },
+            };
+        case 'ShowRegister':
+            return {
+                ...state,
+                user: { ...state.user, isShowRegister: true },
+            };
+        case 'HideRegister':
+            return {
+                ...state,
+                user: { ...state.user, isShowRegister: false },
+            };
+        default:
+            return state;
+    }
+};
+
+
+const store= createStore(reducer);
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <App />
+    <Provider store={store}>
+        <App />
+    </Provider>
 );

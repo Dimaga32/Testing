@@ -4,7 +4,6 @@ export  default function Python(props) {
     return (
         <div>
             <NavigationBar></NavigationBar>
-            <CodeArea lang='python'/>
         </div>
     )
 }
