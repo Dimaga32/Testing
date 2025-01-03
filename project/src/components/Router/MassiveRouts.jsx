@@ -1,6 +1,10 @@
 import { Navigate } from "react-router-dom";
 import Main from "../pages/Main";
-import Python from "../pages/Python";
+import Python from "../pages/About";
+import Account from "../pages/Account";
+import MyData from "../pages/MyData";
+import About from "../pages/About";
+import Support from "../pages/Support";
 
 export const publicRouts = [
     {
@@ -12,7 +16,19 @@ export const publicRouts = [
         element: <Main/>,
     },
     {
-        path: "/Python",
-        element: <Python/>,
+        path: "/Account",
+        element: <Account/>,
+    },
+    {
+        path: "/MyData",
+        element: <MyData/>,
+    },
+    {
+        path: "/About",
+        element: <About/>,
+    },
+    {
+        path: "/Support",
+        element: <Support/>,
     },
 ];

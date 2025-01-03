@@ -27,9 +27,9 @@ export default class NavigationBar extends React.Component {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <div className="flex-container">
                             <Nav className="lg-part-navigation">
-                                <Nav.Link className="center flex-grow-1 fs-2 w-100" href="/JS">JavaScript</Nav.Link>
-                                <Nav.Link className="center flex-grow-1 fs-2 w-100" href="">Go</Nav.Link>
-                                <Nav.Link className="center flex-grow-1 fs-2 w-100" href="/Python">Python</Nav.Link>
+                                <Nav.Link className="center flex-grow-1 fs-2 w-100" href="/About">About</Nav.Link>
+                                <Nav.Link className="center flex-grow-1 fs-2 w-100" href="MyData">My data</Nav.Link>
+                                <Nav.Link className="center flex-grow-1 fs-2 w-100" href="/Support">Support</Nav.Link>
                                 <CustomNavDownDrop/>
                             </Nav>
                         </div>

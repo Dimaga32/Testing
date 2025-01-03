@@ -9,6 +9,7 @@ const defaultState = {
     user: {
         isShowRegister: false,
         isShowLogin: false,
+        isLogin: {name_or_email:"",password:""}
     },
 };
 
@@ -34,6 +35,11 @@ const reducer = (state = defaultState, action) => {
                 ...state,
                 user: { ...state.user, isShowRegister: false },
             };
+        case 'Login':
+            return {
+                ...state,
+                user: { ...state.user, isLogin: {name_or_email:action.payload.name_or_email, password:action.payload.password} },
+            }
         default:
             return state;
     }

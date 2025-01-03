@@ -39,8 +39,15 @@ return(
                 dispatch({type:"ShowLogin"})
                 if(isShowRegister){dispatch({type:"HideRegister"})}}}>
             login</NavDropdown.Item>
+            <NavDropdown.Item className="center flex-grow-1 fs-2 w-100" href="/Account#">personal</NavDropdown.Item>
             <NavDropdown.Divider />
-            <NavDropdown.Item className="center flex-grow-1 fs-2 w-100" href="/account/:">personal</NavDropdown.Item>
+            <NavDropdown.Item className="center flex-grow-1 fs-2 w-100"
+                              onClick={()=>{
+                                  dispatch({type:"Logout"})
+                                  localStorage.removeItem('accessToken')
+                                  localStorage.removeItem('refreshToken')
+                              }}>
+                exit</NavDropdown.Item>
         </div>
     </CSSTransition>
 </NavDropdown>

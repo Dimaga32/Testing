@@ -13,6 +13,7 @@
     "cors": "^2.8.5",
     "cra-template": "1.2.0",
     "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
     "miragejs": "^0.1.48",
     "pg": "^8.13.1",
     "react": "^19.0.0",
@@ -29,7 +30,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "node src/components/API/Server.jsx",
+    "server": "node src/components/API/Server.js",
     "dev": "concurrently \"npm run server\" \"npm run start\""
   },
   "eslintConfig": {

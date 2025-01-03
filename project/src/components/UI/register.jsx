@@ -11,6 +11,27 @@ export default function Register() {
         password: "",
     });
 
+    const handlePostClick = async (NewData,url) => {
+        try {
+            const response = await fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(NewData),
+            });
+
+            if (response.ok) {
+                window.location.reload()
+            } else {
+                const error = await response.text();
+                console.log( error); // Показывает сообщение об ошибке
+            }
+        } catch (error) {
+            console.error("Ошибка при запросе:", error);
+        }
+    }
+
     const RegistrationElement = useRef(null);
 
     const [checkerForm, setCheckerForm] = useState({
@@ -132,7 +153,8 @@ export default function Register() {
                         onClick={(e) => {
                             e.preventDefault();
                             setCheckerForm(formData.current); // Обновление checkerForm
-                            console.log(formData.current); // Для проверки данных
+                            console.log(formData.current);
+                            handlePostClick(formData.current, "http://localhost:5000/api/registers_persons")
                         }}
                     >
                         click

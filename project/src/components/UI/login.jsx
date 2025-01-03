@@ -3,7 +3,6 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { CSSTransition } from "react-transition-group";
-import {removeListener} from "@reduxjs/toolkit";
 
 export default function Login() {
     const formData = useRef({
@@ -25,12 +24,39 @@ export default function Login() {
 
     const dispatch = useDispatch();
     const isShowLogin = useSelector((state) => state.user.isShowLogin);
+    const [logEr, setLogEr]=useState(null);
 
     const handleClick = (e) => {
         if (LoginElement.current && !LoginElement.current.contains(e.target)) {
             dispatch({type:"HideLogin"})
         }
     };
+
+    const handlePostClick = async (NewData,url) => {
+        try {
+            const response = await fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(NewData),
+            });
+
+            if (response.ok) {
+                const data = await response.json(); // Парсим тело ответа
+                localStorage.setItem("accessToken",data.accessToken)
+                localStorage.setItem("refreshToken",data.refreshToken)
+                dispatch({type:"HideLogin"})
+                window.location.href = `http://localhost:3000/Account#${data.id}`
+
+            } else {
+                const error = await response.text();
+                setLogEr(error)
+            }
+        } catch (error) {
+            console.error("Ошибка при запросе:", error);
+        }
+    }
 
     useEffect(() => {
         if (isShowLogin) {
@@ -68,14 +94,14 @@ export default function Login() {
                     action="POST"
                     className="flex-column align-items-center justify-content-center"
                 >
-                    <label htmlFor="nameInput" className="fs-4">
+                    <label htmlFor="name_or_email" className="fs-4">
                         Имя или email пользователя
                     </label>
                     <input
                         type="text"
                         className="form-control fs-4"
-                        id="nameInput"
-                        name="name"
+                        id="name_or_email"
+                        name="name_or_email"
                         placeholder="Введите имя пользователя"
                         onChange={handleChange}
                         autoComplete="off"
@@ -92,9 +118,9 @@ export default function Login() {
                         onChange={handleChange}
                         autoComplete="off"
                     />
-                    {checkerForm.password.length < 6 ? (
+                    {logEr ? (
                         <span className="fs-6">
-                            Неверный пароль, имя или email
+                            {logEr}
                         </span>
                     ) : (
                         ""
@@ -104,6 +130,7 @@ export default function Login() {
                         type="submit"
                         onClick={(e) => {
                             e.preventDefault();
+                            handlePostClick(formData.current,"http://localhost:5000/api/login_persons")
                             setCheckerForm(formData.current); // Обновление checkerForm
                             console.log(formData.current); // Для проверки данных
                         }}
