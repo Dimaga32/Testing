@@ -46,8 +46,7 @@ export default function Register() {
     };
 
     const dispatch = useDispatch();
-    const isShowRegister = useSelector((state) => state.user.isShowRegister);
-
+    const isShowRegister = useSelector((state) => state.register.isShowRegister);
     const handleClick = (e) => {
         if (RegistrationElement.current && !RegistrationElement.current.contains(e.target)) {
             dispatch({type:"HideRegister"})

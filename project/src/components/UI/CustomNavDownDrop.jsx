@@ -7,8 +7,8 @@ export default function CustomNavDownDrop(props) {
     const dropdownRef = useRef(null);
     const navDropdown=useRef(`1px`);
     const dispatch = useDispatch();
-    const isShowRegister = useSelector((state) => state.user.isShowRegister);
-    const isShowLogin = useSelector((state) => state.user.isShowLogin);
+    const isShowRegister = useSelector((state) => state.register.isShowRegister);
+    const isShowLogin = useSelector((state) => state.login.isShowLogin);
 return(
 <NavDropdown
     ref={navDropdown}

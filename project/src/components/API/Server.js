@@ -6,7 +6,6 @@ const app = express();
 const port = 5000;
 const secret_key = "HG&^TYghjkijgtcr^CTIYUHO*&G*&Cryg";
 const jwt = require('jsonwebtoken');
-
 const hashString = (input) => {
     return crypto.createHash("sha256") // Указываем алгоритм хэширования
         .update(input)                 // Обновляем хэш с входной строкой
@@ -97,6 +96,31 @@ app.post("/api/login_persons", async (req, res) => {
     } catch (error) {
         console.error(error.message);
         res.status(500).send("Пользователь не найден");
+    }
+});
+
+app.post("/api/refresh_token", (req, res) => {
+    const { refreshToken } = req.body;
+
+    if (!refreshToken) {
+        return res.status(401).send("Токен обновления отсутствует");
+    }
+
+    try {
+        // Проверяем refreshToken
+        const decoded = jwt.verify(refreshToken, secret_key);
+
+        // Создаём новый accessToken
+        const newAccessToken = jwt.sign(
+            { userId: decoded.userId },
+            secret_key,
+            { expiresIn: "30m" }
+        );
+
+        res.status(200).json({ accessToken: newAccessToken });
+    } catch (error) {
+        console.error("Ошибка при обновлении токена:", error.message);
+        res.status(403).send("Неверный токен обновления");
     }
 });
 

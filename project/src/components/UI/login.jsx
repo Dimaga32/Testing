@@ -3,7 +3,6 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { CSSTransition } from "react-transition-group";
-
 export default function Login() {
     const formData = useRef({
         name_or_email: "",
@@ -23,7 +22,7 @@ export default function Login() {
     };
 
     const dispatch = useDispatch();
-    const isShowLogin = useSelector((state) => state.user.isShowLogin);
+    const isShowLogin = useSelector((state) => state.login.isShowLogin);
     const [logEr, setLogEr]=useState(null);
 
     const handleClick = (e) => {
