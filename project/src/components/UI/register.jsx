@@ -3,6 +3,7 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { CSSTransition } from "react-transition-group";
+import {ActionCreater} from "../Redux/MainReducer";
 
 export default function Register() {
     const formData = useRef({
@@ -49,7 +50,7 @@ export default function Register() {
     const isShowRegister = useSelector((state) => state.register.isShowRegister);
     const handleClick = (e) => {
         if (RegistrationElement.current && !RegistrationElement.current.contains(e.target)) {
-            dispatch({type:"HideRegister"})
+            dispatch(ActionCreater("HideRegister"))
         }
     };
 
@@ -79,7 +80,7 @@ export default function Register() {
                 <span
                     className="X"
                     onClick={() => {
-                        dispatch({ type: "HideRegister" }); // Устанавливаем состояние в Redux
+                        dispatch(ActionCreater("HideRegister")); // Устанавливаем состояние в Redux
                         console.log(isShowRegister); // Для проверки состояния
                     }}
                 >

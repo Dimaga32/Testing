@@ -2,14 +2,17 @@ const defaultState = {
         isShowRegister: false,
 };
 
+const ShowRegister="ShowRegister"
+const HideRegister="HideRegister"
+
 export const Registerreducer = (state = defaultState, action) => {
     switch (action.type) {
-        case 'ShowRegister':
+        case ShowRegister:
             return {
                 ...state,
                  isShowRegister: true
             };
-        case 'HideRegister':
+        case HideRegister:
             return {
                 ...state,
                isShowRegister: false

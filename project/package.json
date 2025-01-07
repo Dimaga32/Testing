@@ -6,6 +6,7 @@
     "@codemirror/lang-javascript": "^6.2.2",
     "@codemirror/language": "^6.10.6",
     "@codemirror/legacy-modes": "^6.4.2",
+    "@redux-devtools/extension": "^3.3.0",
     "@reduxjs/toolkit": "^2.5.0",
     "@uiw/react-codemirror": "^4.23.7",
     "axios": "^1.7.9",
@@ -24,7 +25,9 @@
     "react-router-dom": "^7.0.2",
     "react-scripts": "^5.0.1",
     "react-transition-group": "^4.4.5",
-    "redux": "^5.0.1"
+    "redux": "^5.0.1",
+    "redux-phunk": "^1.0.0",
+    "redux-thunk": "^3.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

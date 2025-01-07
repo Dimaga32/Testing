@@ -1,7 +1,8 @@
 import {CSSTransition} from "react-transition-group";
 import {NavDropdown} from "react-bootstrap";
-import React,{useState,useRef} from "react";
+import React, {useState, useRef, useEffect, use} from "react";
 import {useDispatch, useSelector} from "react-redux";
+import {ActionCreater} from "../Redux/MainReducer";
 export default function CustomNavDownDrop(props) {
     const [showDropdown,setShowDropdown]=useState(false)
     const dropdownRef = useRef(null);
@@ -9,6 +10,8 @@ export default function CustomNavDownDrop(props) {
     const dispatch = useDispatch();
     const isShowRegister = useSelector((state) => state.register.isShowRegister);
     const isShowLogin = useSelector((state) => state.login.isShowLogin);
+    const { UserId, isLoaded, UserName, UserEmail } = useSelector((state) => state.user);
+    console.log("UserId from Redux:", UserId);
 return(
 <NavDropdown
     ref={navDropdown}
@@ -31,19 +34,19 @@ return(
         <div onClick={(e)=>e.stopPropagation()} ref={dropdownRef} style={{width:navDropdown.current.offsetWidth}}>
             <NavDropdown.Item className="center flex-grow-1 fs-2 w-100"
                 onClick={()=>{
-                dispatch({type:"ShowRegister"})
-                if(isShowLogin){dispatch({type:"HideLogin"})}}}>
+                dispatch(ActionCreater("ShowRegister"))
+                if(isShowLogin){dispatch(ActionCreater("HideLogin"))}}}>
             register</NavDropdown.Item>
             <NavDropdown.Item className="center flex-grow-1 fs-2 w-100"
                 onClick={()=>{
-                dispatch({type:"ShowLogin"})
-                if(isShowRegister){dispatch({type:"HideRegister"})}}}>
+                dispatch(ActionCreater("ShowLogin"))
+                if(isShowRegister){dispatch(ActionCreater("HideRegister"))}}}>
             login</NavDropdown.Item>
-            <NavDropdown.Item className="center flex-grow-1 fs-2 w-100" href="/Account#">personal</NavDropdown.Item>
+            <NavDropdown.Item className="center flex-grow-1 fs-2 w-100" href={`/Account#${UserId?UserId:""}`}>personal</NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item className="center flex-grow-1 fs-2 w-100"
                               onClick={()=>{
-                                  dispatch({type:"Logout"})
+                                  dispatch(ActionCreater("Logout"))
                                   localStorage.removeItem('accessToken')
                                   localStorage.removeItem('refreshToken')
                               }}>

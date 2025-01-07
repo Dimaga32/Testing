@@ -3,6 +3,7 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { CSSTransition } from "react-transition-group";
+import {ActionCreater} from "../Redux/MainReducer";
 export default function Login() {
     const formData = useRef({
         name_or_email: "",
@@ -27,7 +28,7 @@ export default function Login() {
 
     const handleClick = (e) => {
         if (LoginElement.current && !LoginElement.current.contains(e.target)) {
-            dispatch({type:"HideLogin"})
+            dispatch(ActionCreater("HideLogin"))
         }
     };
 
@@ -45,7 +46,8 @@ export default function Login() {
                 const data = await response.json(); // Парсим тело ответа
                 localStorage.setItem("accessToken",data.accessToken)
                 localStorage.setItem("refreshToken",data.refreshToken)
-                dispatch({type:"HideLogin"})
+                dispatch(ActionCreater("HideLogin"))
+                dispatch(ActionCreater("LoadUser",{userid:data.id,username:data.name,useremail:data.email}))
                 window.location.href = `http://localhost:3000/Account#${data.id}`
 
             } else {
@@ -83,7 +85,7 @@ export default function Login() {
                 <span
                     className="X"
                     onClick={() => {
-                        dispatch({ type: "HideLogin" }); // Устанавливаем состояние в Redux
+                        dispatch(ActionCreater("HideLogin")); // Устанавливаем состояние в Redux
                         console.log(isShowLogin); // Для проверки состояния
                     }}
                 >
