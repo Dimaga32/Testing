@@ -8,6 +8,7 @@
     "@codemirror/legacy-modes": "^6.4.2",
     "@redux-devtools/extension": "^3.3.0",
     "@reduxjs/toolkit": "^2.5.0",
+    "@types/express": "^4.17.21",
     "@uiw/react-codemirror": "^4.23.7",
     "axios": "^1.7.9",
     "body-parser": "^1.20.3",
@@ -34,7 +35,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "node src/components/API/Server.js",
+    "server": "ts-node src/components/API/Server.ts",
     "dev": "concurrently \"npm run server\" \"npm run start\""
   },
   "eslintConfig": {
@@ -56,8 +57,14 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.26.3",
+    "@babel/preset-typescript": "^7.26.0",
+    "babel-loader": "^9.2.1",
     "bootstrap": "^5.3.3",
     "sass": "^1.83.0",
-    "sass-loader": "^16.0.4"
+    "sass-loader": "^16.0.4",
+    "ts-node": "^10.9.2"
   }
 }
