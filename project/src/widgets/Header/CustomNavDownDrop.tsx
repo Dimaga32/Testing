@@ -3,7 +3,7 @@ import React from "react";
 import {NavDropdown} from "react-bootstrap";
 import {useState, useRef} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {ActionCreater, TypeDispatch, TypeReducerState} from "../Redux/MainReducer";
+import {ActionCreater, TypeDispatch, TypeReducerState} from "../../app/MainReducer";
 export default function CustomNavDownDrop() {
     const [showDropdown,setShowDropdown]=useState<boolean>(false)
     const dropdownRef = useRef<HTMLDivElement | null>(null);

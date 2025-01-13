@@ -1,11 +1,11 @@
 import {applyMiddleware, createStore} from "redux";
 import { combineReducers } from "redux";
-import { Loginreducer } from "./LoginReducer";
-import { Registerreducer } from "./RegisterReducer";
+import { Loginreducer } from "../features/Logination/LoginReducer";
+import { Registerreducer } from "../features/Registration/RegisterReducer";
 import { composeWithDevTools} from "@redux-devtools/extension";
 import {thunk} from "redux-thunk";
-import {UserDatereducer} from "./UserDataReducer";
-import {UserReducer} from "./UserReducer";
+import {UserDatereducer} from "../features/UserData/UserDataReducer";
+import {UserReducer} from "../features/User/UserReducer";
 
 type TypeActionCreater={
     type:string,

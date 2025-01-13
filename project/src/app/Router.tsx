@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { publicRouts} from "./MassiveRouts";
+import { publicRouts} from "./config/MassiveRouts";
 function Router() {
     return (
         <BrowserRouter>

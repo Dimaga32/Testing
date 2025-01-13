@@ -2,8 +2,8 @@ import React, { useRef, useState,useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { CSSTransition } from "react-transition-group";
-import {ActionCreater, TypeDispatch, TypeReducerState} from "../Redux/MainReducer";
-export default function Login() {
+import {ActionCreater, TypeDispatch, TypeReducerState} from "../../app/MainReducer";
+export default function LoginContent() {
     type TypeData={
         accessToken :string,
         refreshToken:string,

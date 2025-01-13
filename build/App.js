@@ -15,4 +15,4 @@ function App() {
     return (_jsx("div", __assign({ className: "App" }, { children: _jsx(Router, {}) })));
 }
 export default App;
-//# sourceMappingURL=App.tsx.map
+//# sourceMappingURL=app.tsx.map

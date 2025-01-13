@@ -3,9 +3,9 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { CSSTransition } from "react-transition-group";
-import {ActionCreater, TypeDispatch, TypeReducerState} from "../Redux/MainReducer";
+import {ActionCreater, TypeDispatch, TypeReducerState} from "../../app/MainReducer";
 
-export default function Register() {
+export default function RegisterContent() {
     type TypeRegisterData = {
         name: string,
         email: string,
