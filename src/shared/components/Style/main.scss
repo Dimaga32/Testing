@@ -1,0 +1,216 @@
+@import '../../../../node_modules/bootstrap';
+.h1 {
+  font-size: calc(2 * (1.375rem + 1.5vw));
+}
+.container{
+  @extend .container ;
+  margin: 10px;
+}
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Для выравнивания по вертикали */
+  width: 100%; /* Контейнер занимает всю ширину */
+}
+.lg-part-navigation{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.flex-grow-1{
+  @extend .flex-grow-1;
+  text-align: center;
+}
+.flex-container:hover{
+  @extend .flex-container;
+}
+.Navbar-Brand{
+  box-sizing: border-box;
+  height: 50px;
+}
+.center.flex-grow-1.fs-2:hover{
+  background-color: rgb(9, 83, 189)
+}
+
+.nav-menu-part-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.nav-menu-part-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 600ms linear, transform 600ms linear;
+}
+
+.nav-menu-part-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+.nav-menu-part-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 600ms linear, transform 600ms linear;
+}
+.nav-menu-part-appear {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.nav-menu-part-appear-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 600ms, transform 600ms;
+}
+
+.NavDropdown{
+  position: relative;
+  left: 100px;
+}
+.MyReg, .MyLog {
+  text-align: center;
+  position: fixed;
+  background-color: #38ba9c;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  top: 20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 60vh;
+
+  @media (min-width: 576px) {
+    top: 22.5vh;
+    width: 85vw;
+    height: 55vh;
+  }
+  @media (min-width: 768px) {
+    top: 25vh;
+    width: 80vw;
+    height: 50vh;
+  }
+  @media (min-width: 992px) {
+    top: 25vh;
+    width: 70vw;
+    height: 50vh;
+  }
+  @media (min-width: 1200px) {
+    top: 25vh;
+    width: 70vw;
+    height: 50vh;
+  }
+  @media (min-width: 1400px) {
+    top: 25vh;
+    width: 70vw;
+    height: 50vh;
+  }
+
+  /* Для landscape-ориентации */
+  @media (orientation: landscape) and (max-height: 850px) {
+    top: 5vh;
+    width: 95vw;
+    height: 90vh;
+    left: 50%; /* Центрирование по горизонтали */
+    transform: translateX(-50%); /* Центрируем форму */
+  }
+}
+
+label {
+  user-select: none;
+  margin-top: 0.5vh;
+  margin-bottom: 0.5vh;
+}
+
+.form-control {
+  text-align: center;
+  width: 80vw;
+  height: 5vh;
+  font-size: 3vh;
+
+  @media (min-width: 576px) {
+    width: 70vw;
+    height: 5vh;
+    font-size: 3vh;
+  }
+  @media (min-width: 768px) {
+    width: 70vw;
+    height: 5vh;
+    font-size: 3vh;
+  }
+  @media (min-width: 992px) {
+    width: 60vw;
+    height: 6vh;
+    font-size: 3vh;
+  }
+  @media (min-width: 1200px) {
+    width: 60vw;
+    height: 6vh;
+    font-size: 3vh;
+  }
+  @media (min-width: 1400px) {
+    width: 60vw;
+    height: 6vh;
+    font-size: 3vh;
+  }
+
+  /* Для landscape-ориентации */
+  @media (orientation: landscape) and (max-height: 850px) {
+    width: 90vw;
+    height: 7vh;
+    font-size: 4vh;
+  }
+
+  &::placeholder {
+    text-align: center;
+  }
+}
+
+input {
+  text-align: center;
+}
+
+.sub_btn {
+  margin-top: 2vh;
+  height: 6vh;
+  margin-bottom: 0.5vh;
+  align-self: center;
+  /* Для landscape-ориентации */
+  @media (orientation: landscape) and (max-height: 600px) {
+    height: 8vh;
+  }
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.X {
+  position: absolute;
+  top: 1vh;
+  right: 1vh;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: red;
+  user-select: none;
+}
+.register-animation-enter {
+  opacity: 0;
+  transform: translate(-100%, 0px); /* Сместим только по вертикали */
+}
+.register-animation-enter-active {
+  opacity: 1;
+  transform: translate(-50%, 0); /* Возвращаемся в центр */
+  transition: opacity 1000ms ease-in-out, transform 1000ms ease-in-out;
+}
+.register-animation-exit {
+  opacity: 1;
+  transform: translate(-50%, 0); /* Исходное положение */
+}
+.register-animation-exit-active {
+  opacity: 0;
+  transform: translate(50%, 0px); /* Сместим только по вертикали */
+  transition: opacity 1000ms ease-in-out, transform 1000ms ease-in-out;
+}
+
+
