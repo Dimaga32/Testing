@@ -1,6 +1,4 @@
 import MyDataContent from "./MyData";
-export default function Support(){
-    return (
-        <MyDataContent/>
-    )
+export default function Support() {
+   return <MyDataContent />;
 }

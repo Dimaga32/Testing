@@ -1,0 +1,48 @@
+{
+   "env": {
+      "browser": true, // Позволяет использовать глобальные переменные браузера (window, document)
+      "node": true, // Добавляет глобальные переменные Node.js (process, __dirname)
+      "es2021": true // Включает синтаксис ECMAScript 2021
+   },
+   "parser": "@typescript-eslint/parser",
+   "extends": [
+      "eslint:recommended", // Использует стандартные правила ESLint
+      "plugin:react/recommended", // Рекомендованные правила для React
+      "plugin:prettier/recommended" // Включает интеграцию Prettier с ESLint
+   ],
+   "parserOptions": {
+      "ecmaVersion": 12, // Версия ECMAScript (12 = ES2021)
+      "sourceType": "module", // Указывает, что код использует ES-модули
+      "ecmaFeatures": {
+         "jsx": true // Включает поддержку синтаксиса JSX для React
+      }
+   },
+   "plugins": [
+      "react", // Плагин для работы с React
+      "prettier", // Плагин для интеграции Prettier
+      "@typescript-eslint" //  Плагин для TypeScript
+   ],
+   "rules": {
+      "prettier/prettier": "error", // Обрабатывает ошибки Prettier как ESLint-ошибки
+      "react/prop-types": "warn", // Отключает обязательную проверку PropTypes в React
+      "no-unused-vars": "warn", // Показывает предупреждения для неиспользуемых переменных
+      "no-console": "off", // Показывает предупреждения при использовании console.log
+      "eqeqeq": ["error", "always"], // Требует строгое сравнение (=== вместо ==)
+      "semi": ["error", "always"], // Обязательное использование точки с запятой
+      "quotes": ["error", "double"], // Требует использования одинарных кавычек
+      "react/react-in-jsx-scope": "off" // Отключает правило, требующее импорт React (не нужно с React 17+)
+   },
+   "settings": {
+      "react": {
+         "version": "detect" // Автоматически определяет версию React
+      }
+   },
+   "ignorePatterns": [
+      "node_modules/", // Исключает папку node_modules из анализа
+      "build/", // Исключает папку build
+      "*.min.js", // Исключает минифицированные файлы
+      "scripts/",
+      "config",
+      "idea"
+   ]
+}

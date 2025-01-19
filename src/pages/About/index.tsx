@@ -1,6 +1,4 @@
 import AboutContent from "./About";
-export default function Support(){
-    return (
-        <AboutContent/>
-    )
+export default function Support() {
+   return <AboutContent />;
 }

@@ -1,6 +1,4 @@
 import MainContent from "./Main";
-export default function Main(){
-    return (
-        <MainContent/>
-    )
+export default function Main() {
+   return <MainContent />;
 }

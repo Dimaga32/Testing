@@ -1,4 +1,3 @@
-
 # Getting Started with Create React App
 
 This project was bootstrapped with Create React App.
@@ -22,6 +21,7 @@ The ability to register (currently without email) and login,
 routing is configured, and the adaptability of existing elements
 
 ## Stack
+
 React, redux, RTK Query, bootstrap, express, axios, redux-thunk, postgresql
 
 ## Install Dependencies

@@ -1,3 +1,1 @@
-export default function  UserDataTable(){
-
-}
+export default function UserDataTable() {}
