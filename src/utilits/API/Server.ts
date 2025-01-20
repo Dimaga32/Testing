@@ -58,7 +58,7 @@ type TypeResult = {
 };
 
 const corsOptions: CorsOptions = {
-   origin: "http://localhost:3000", // Локальный адрес фронтенда
+   origin: "http://localhost:5173", // Локальный адрес фронтенда
 };
 app.use(cors(corsOptions));
 app.use(express.json());

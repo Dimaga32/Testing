@@ -1,6 +1,5 @@
 import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
-import "../../shared/components/Style/main.scss";
 import CustomNavDownDrop from "./CustomNavDownDrop";
 
 export default class NavigationBar extends React.Component {

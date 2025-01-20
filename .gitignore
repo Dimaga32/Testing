@@ -8,9 +8,12 @@
 # testing
 /coverage
 /config
+/vite
+
 # production
 /build
 /.idea
+
 # misc
 .DS_Store
 .env.local

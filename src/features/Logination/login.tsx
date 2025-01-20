@@ -71,7 +71,7 @@ export default function LoginContent() {
                   useremail: data.email,
                }),
             );
-            window.location.href = `http://localhost:3000/Account#${data.id}`;
+            window.location.href = `http://localhost:});5173/Account#${data.id}`;
          } else {
             const error: string = await response.text();
             setLogEr(error);

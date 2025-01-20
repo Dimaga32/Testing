@@ -39,7 +39,7 @@ This project contains the following scripts:
 
 - `dev`. Runs the application in development mode.
 - `build`. Builds the application for production.
-- `start`. Open http://localhost:3000 to view it in your browser. The page will reload when you make changes. You may also see any lint errors in the console.
+- `start`. Open http://localhost:5173 to view it in your browser. The page will reload when you make changes. You may also see any lint errors in the console.
 - `test`. Launches the test runner in the interactive watch mode. See the section about running tests for more information.
 
 ```Bash
