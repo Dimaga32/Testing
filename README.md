@@ -1,10 +1,4 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with Create React App.
-
-> The template was created using [npm](https://www.npmjs.com/). Therefore, it is
-> required to use it for this project as well. Using other package managers, you
-> will receive a corresponding error.
+# Getting Started with vite
 
 ## About project
 

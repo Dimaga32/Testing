@@ -1,4 +1,4 @@
-@use "bootstrap/scss/bootstrap";
+@use "bootstrap/scss/bootstrap" as *;
 
 .container {
    @extend .container;
@@ -39,8 +39,8 @@
    opacity: 1;
    transform: translateY(0);
    transition:
-           opacity 600ms linear,
-           transform 600ms linear;
+      opacity 600ms linear,
+      transform 600ms linear;
 }
 
 .nav-menu-part-exit {
@@ -51,8 +51,8 @@
    opacity: 0;
    transform: translateY(-10px);
    transition:
-           opacity 600ms linear,
-           transform 600ms linear;
+      opacity 600ms linear,
+      transform 600ms linear;
 }
 .nav-menu-part-appear {
    opacity: 0;
@@ -62,8 +62,8 @@
    opacity: 1;
    transform: translateY(0);
    transition:
-           opacity 600ms,
-           transform 600ms;
+      opacity 600ms,
+      transform 600ms;
 }
 
 .NavDropdown {
@@ -206,8 +206,8 @@ form {
    opacity: 1;
    transform: translate(-50%, 0); /* Возвращаемся в центр */
    transition:
-           opacity 1000ms ease-in-out,
-           transform 1000ms ease-in-out;
+      opacity 1000ms ease-in-out,
+      transform 1000ms ease-in-out;
 }
 .register-animation-exit {
    opacity: 1;
@@ -217,6 +217,6 @@ form {
    opacity: 0;
    transform: translate(50%, 0px); /* Сместим только по вертикали */
    transition:
-           opacity 1000ms ease-in-out,
-           transform 1000ms ease-in-out;
+      opacity 1000ms ease-in-out,
+      transform 1000ms ease-in-out;
 }
